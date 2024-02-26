@@ -95,15 +95,16 @@ void winOrLose(vector<vector<char>> &gameBoard, int minesGivenByUser, int size) 
 
         // DESCRIPTION :- if the current index have no bomb then we will place the mine there and then take the 
         // next coordinate from the user again 
-             if (gameBoard[row][col] != 'B') {
+             if (gameBoard[row][col] != 'B' && gameBoard[row][col] !='M') {
                 gameBoard[row][col] = 'M';
                 minesGivenByUser--;
-            } else {
+            } 
+            else {
 
         // Mine is placed on bomb , means user lost.
-                cout << "OOPS!, You put mine above bomb." << endl;
+                cout << "OOPS!" << endl;
                 printingOutput(gameBoard, size);
-                cout<<"YOU LOST! Better Luck Next Time";
+                cout<<"YOU LOST! Better Luck Next Time , PLay Again";
                 return ;
             }
         }
